@@ -192,3 +192,46 @@ public:
         return ans;
     }
 };
+
+// SOLUTION ACCEPT
+class Solution {
+public:
+    vector<vector<int>> threeSum(vector<int>& arr) {
+        
+       vector<vector<int>> res;
+        
+        sort(arr.begin(), arr.end());
+        int size = (int)arr.size();
+        for (int i = 0 ; i < size; i++){
+            
+            int target = -arr[i];
+            int front = i + 1;
+            int back = size - 1;
+            while (front < back){
+                
+                int sum = arr[front] + arr[back];
+                if (sum < target)
+                    front++;
+                else if (sum > target)
+                    back--;
+                else{
+                    
+                    int a1 = arr[i];
+                    int a2 = arr[front];
+                    int a3 = arr[back];
+                    res.push_back(vector<int>{a1, a2, a3});
+                    
+                    while (front < back && arr[front] == a2) front++;
+                    while (front < back && arr[back] == a3) back--;
+                    
+                }
+                
+            }
+      while (i + 1 < size && arr[i+1] == arr[i]) i++;      
+        }
+        return res;
+    }
+            
+        
+
+};
