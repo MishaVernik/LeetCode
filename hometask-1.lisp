@@ -24,7 +24,7 @@
       (if (member (car lst) (cdr lst))
 	  (delete-repeats (cdr lst))
 	  (cons (car lst) (delete-repeats (cdr lst))))))
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; TESTS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; TESTS ;;;;;;;;;;;;;;;;;;;;
 ;; TASK 1
 (defun check-sum-lst (input expected)
   (let ((result (sum-lst input)))
