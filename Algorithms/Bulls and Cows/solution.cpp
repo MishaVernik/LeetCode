@@ -37,9 +37,6 @@ public:
         // 1 - 2
         // 2 - 2
         // 3 - 1
-        
-        //  
-        // 
         string ans = "";
         int A = 0;
         int B = 0;
